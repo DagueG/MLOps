@@ -19,9 +19,9 @@ Construire un modèle de classification automatisé pour prédire la probabilit�
 MLOps/
 ├── notebooks/              # Notebooks Jupyter pour chaque étape
 │   ├── 01_data_preparation.ipynb
-│   ├── 02_eda_and_feature_engineering.ipynb
-│   ├── 03_model_training.ipynb
-│   └── 04_model_optimization.ipynb
+│   ├── 02_model_training.ipynb
+│   ├── 03_hyperparameter_optimization.ipynb
+│   └── 04_feature_importance_threshold.ipynb
 ├── src/                    # Code réutilisable
 │   ├── preprocessing.py
 │   ├── models.py
@@ -55,31 +55,41 @@ MLOps/
 
 ---
 
-### ⏳ Étape 2 - MLflow Tracking & Exploration
-**Status:** À faire
+### ✅ Étape 2 - MLflow Tracking & Entraînement des Modèles
+**Status:** Complétée
 
-- Mise en place du tracking MLflow
-- Lancement de l'interface web MLflow
-- Configuration du Model Registry
+- Entraînement de 4 modèles baseline: Logistic Regression, Random Forest, XGBoost, LightGBM
+- Validation croisée stratifiée (5-fold StratifiedKFold)
+- Logging automatique avec MLflow
+- Évaluation sur métriques techniques et métier (coût FN=10x, FP=1x)
+
+**Résultats:**
+| Modèle | AUC | Accuracy | Business Cost | CV AUC |
+|--------|-----|----------|---------------|--------|
+| LightGBM | 0.7657 | 0.7132 | 159,859 | 0.7657 |
+| XGBoost | 0.7655 | 0.7153 | 159,658 | 0.7655 |
+| Logistic Reg. | 0.7573 | 0.6950 | 163,281 | 0.7573 |
+| Random Forest | 0.7413 | 0.7382 | 169,766 | 0.7413 |
 
 ---
 
-### ⏳ Étape 3 - Entraînement & Comparaison des Modèles
-**Status:** À faire
+### ⏳ Étape 3 - Optimisation des Hyperparamètres
+**Status:** En cours
 
-- Entraînement de plusieurs modèles (Logistic Regression, Random Forest, XGBoost, LightGBM)
-- Validation croisée stratifiée
-- Évaluation sur des métriques métier (coût FN/FP) et techniques (AUC, Accuracy)
+- GridSearchCV sur LightGBM et XGBoost
+- Recherche d'hyperparamètres optimaux (n_estimators, max_depth, learning_rate)
+- Logging des essais avec MLflow
+- Comparaison baseline vs optimized
 
 ---
 
-### ⏳ Étape 4 - Optimisation & Feature Importance
-**Status:** À faire
+### ⏳ Étape 4 - Feature Importance & Optimisation du Seuil
+**Status:** En cours
 
-- Optimisation des hyperparamètres (GridSearchCV/Optuna)
-- Optimisation du seuil de décision
-- Feature Importance globale (SHAP) et locale
-- Sélection du meilleur modèle
+- Optimisation du seuil de décision basé sur coût métier
+- Feature Importance par permutation
+- Feature Importance globale avec SHAP (TreeExplainer)
+- Sauvegarder le modèle final avec seuil optimal dans Model Registry
 
 ---
 
