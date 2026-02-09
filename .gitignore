@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# MLflow
+mlruns/
+.mlflow
+
+# Data files (keep structure, ignore actual data)
+datasets/*.csv
+outputs/*.csv
+*.pkl
+*.pickle
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pth
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+.cache
+temp/
+tmp/
+
+# Keep these directories (even if empty)
+!datasets/.gitkeep
+!outputs/.gitkeep
+!models/.gitkeep
+!logs/.gitkeep
+!src/.gitkeep
