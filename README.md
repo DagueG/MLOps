@@ -138,17 +138,10 @@ Les données proviennent du challenge Kaggle "Home Credit Default Risk".
 📊 **Coût métier:** FN (mauvais client accepté) coûte 10x plus que FP (bon client refusé)
 → Optimiser le seuil selon ce ratio
 
-🎯 **Benchmark:** Kaggle winner AUC = 0.82
-→ Attention à l'overfitting si AUC > 0.82
-
 ---
 
 ## Auteur
 
-Data Scientist - OpenClassrooms Project
+DagueG - OpenClassrooms Project
 
 ---
-
-## Statut du Projet
-
-🟡 En cours - Étape 1 complétée
